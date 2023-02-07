@@ -55,8 +55,8 @@
           name: startRectangle
           script:
             '''
-            Nx=5
-            Ny=5
+            Nx=7
+            Ny=2
             y0=1
             SlowMotion=3
 
@@ -187,13 +187,13 @@
             g=9.8 // תאוצת המשיכה
             m=0.01 // מסת חלקיק
             L0=0.4 // אורך רפוי
-            angle=0 // זווית סיבוב
+            angle=30 // זווית סיבוב
             kfloor=1e5 // קשיחות הרצפה
             dt_factor=0.01 // מקדם דיוק
             k=100 // קשיחות קפיצים
             Cr=0.05 // גודל חלקיקים
             draw_lines=true // ציור הקווים
-            fmax=30 // מתיחה מקסימלית
+            fmax=10 // מתיחה מקסימלית
             followMouse.followX=true
             // מעקב אחר עכבר אופקי
             followMouse.followY=true
