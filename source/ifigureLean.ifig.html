@@ -989,8 +989,8 @@ ball.x+=0.1`
         function update(conteval){
             if(conteval.exp.value.length>0){
             try { 
-                  let expr=cellLib.magic.magic_syntax(conteval.exp.value);
-                  let out=eval(expr);
+                  let exprr=cellLib.magic.magic_syntax(conteval.exp.value);
+                  let out=eval(exprr);
                   if(out===null){out='null'}
                   if(isNumber(out)){
                       conteval.output_field.value=roundDisplay(out)
@@ -1008,10 +1008,14 @@ ball.x+=0.1`
             }
             function roundDisplay(x){
                 let rx=roundSignificant(x,conteval.outNumberRound.significantDigits)
+                return rx
                 if(rx==0){return '0'}
-                let a=abs(rx);
+                let a=Math.abs(rx);
                 if(a>conteval.outNumberRound.minReg && a<conteval.outNumberRound.maxReg){return rx.toString()}
                 else {return rx.toExponential()}
+            }
+            function roundSignificant(x,n){
+                return Number(x.toPrecision(n));
             }
         }
         let conteval=this;
